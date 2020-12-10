@@ -1,5 +1,12 @@
-<html>
-<body>
-<h2>Hello World!</h2>
-</body>
-</html>
+<% }
+    else
+    {
+    response
+    .
+    sendRedirect
+    (
+    "customer/list"
+    )
+    ;
+    }
+%>

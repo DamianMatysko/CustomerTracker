@@ -12,8 +12,24 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerDAO customerDAO;
+
     @Override
     public List<Customer> getCustomers() {
         return customerDAO.getCustomers();
     }
+
+    @Override
+    @Transactional
+    public void saveCustomer(Customer customer) {
+        customerDAO.saveCustomer(customer);
+
+    }
+
+    @Override
+    @Transactional
+    public Customer getCustomer(int id) {
+        return customerDAO.getCustomers(id);
+    }
+
+
 }

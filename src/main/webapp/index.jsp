@@ -1,12 +1,1 @@
-<% }
-    else
-    {
-    response
-    .
-    sendRedirect
-    (
-    "customer/list"
-    )
-    ;
-    }
-%>
+<% response.sendRedirect("customer/list"); %>

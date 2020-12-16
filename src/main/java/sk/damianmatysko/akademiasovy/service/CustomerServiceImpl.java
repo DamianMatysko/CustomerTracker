@@ -14,6 +14,7 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerDAO customerDAO;
 
     @Override
+    @Transactional
     public List<Customer> getCustomers() {
         return customerDAO.getCustomers();
     }
@@ -21,6 +22,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     @Transactional
     public void saveCustomer(Customer customer) {
+
         customerDAO.saveCustomer(customer);
 
     }
@@ -28,8 +30,13 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     @Transactional
     public Customer getCustomer(int id) {
-        return customerDAO.getCustomers(id);
+        return customerDAO.getCustomer(id);
     }
 
+    @Override
+    @Transactional
+    public void deleteCustomer(int id) {
 
+        customerDAO.deleteCustomer(id);
+    }
 }
